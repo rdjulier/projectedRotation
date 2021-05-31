@@ -5,6 +5,9 @@ import React from 'react';
 import 'react-responsive-modal/styles.css';
 import { Modal } from 'react-responsive-modal';
 
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+</style>
 
 const $ = require('jquery');
 
@@ -128,12 +131,14 @@ render() {
       <div className="App">
 
       <div style={{fontSize: '11px' }}>
+        <span style={{ fontFamily: 'Anton, sans-serif', fontSize: '30px' }}>Projected Rotation</span>
         <p>This is a small personal project application designed to showcase various features of ReactJS and NodeJS.</p>
         <p>This single page application starts by having the user click to view the rotation, then select a pitcher of their choice.</p>
         <p>After clicking a pitcher's name, the record and ERA as of the latest update will be displayed. Pitchers can be both added and removed from the rotation.</p>
         <p>This application mainly features React state changes and API calls through a MirageJS backend of hard coded data</p>
         <p>Full code is available on <a href='https://github.com/rdjulier/projectedRotation'>GitHub</a>.</p>
       </div>
+      <span><a href='https://github.com/rdjulier'><img style={{ width: '30px', height: '30px'}} src='https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png'/></a><a href='https://www.linkedin.com/in/ryanjulier'><img style={{ width: '30px', height: '30px'}} src='https://www.clipartmax.com/png/small/30-308556_joshua-fink-linkedin-grey-linkedin-logo-png.png'/></a></span>
       <hr />
         <p>
           The current projected starting rotation for the New York Yankees.
@@ -142,7 +147,7 @@ render() {
           <div onClick={this.showRotation} style={{ color: 'blue', cursor: 'pointer' }}>View Rotation</div>
         }
         {this.state.rotation && <div onClick={this.showRotation} style={{ color: 'blue', cursor: 'pointer' }}>Hide Rotation</div>}
-        {this.state.rotation && <div style={{ marginTop: '10px' }}>To see more information about a pitcher, click on the name.</div>}
+        {this.state.rotation && <div style={{ marginTop: '10px' }}>To see more information about a pitcher, click on a name.</div>}
         {this.state.rotation && <button className="buttonAdd" onClick={this.onOpenModal}>Add Pitcher</button>}
 
         <Modal open={this.state.open} onClose={this.onCloseModal}>
